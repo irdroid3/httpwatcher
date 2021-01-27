@@ -375,3 +375,6 @@ class HttpWatcherWebSocketHandler(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         logger.debug("Ignoring message from WebSocket client: %s", message)
+
+    def check_origin(self, origin):
+        return True
