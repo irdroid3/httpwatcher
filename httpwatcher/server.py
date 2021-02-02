@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# To prevent 403 errors in the browser :
 # Added : def check_origin(self, origin): return True
 # This could be insecure !!! - but ok for a Kiosk browser on the http server !
 # See :
