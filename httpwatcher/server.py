@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+# Added : def check_origin(self, origin): return True
+# This could be insecure !!! - but ok for a Kiosk browser on the http server !
+# See :
+# https://stackoverflow.com/questions/24800436/under-tornado-v4-websocket-connections-get-refused-with-403
+# https://stackoverflow.com/questions/7749914/add-method-to-loaded-class-module-in-python
+# https://www.tornadoweb.org/en/stable/websocket.html
+# https://stackoverflow.com/questions/24851207/tornado-403-get-warning-when-opening-websocket
+
 from __future__ import unicode_literals
 
 import os.path
@@ -375,3 +383,6 @@ class HttpWatcherWebSocketHandler(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         logger.debug("Ignoring message from WebSocket client: %s", message)
+
+    def check_origin(self, origin):
+        return True
